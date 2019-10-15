@@ -1,0 +1,27 @@
+.login {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login > div {
+  width: 400px;
+}
+
+/* 当屏幕宽度小于768px的时候套用的样式 */
+@media screen and (max-width: 768px) {
+  .login > div {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+  .login > div {
+    width: 300px;
+  }
+}
+
+.login .input-group {
+  margin-top: 1rem;
+}
