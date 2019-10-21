@@ -1,0 +1,21 @@
+body {
+  background-image: url('https://klcxy.top/myoss/common/queryOssUrl?tbOssInfo.oiid=98&tbOssInfo.obid=3');
+  background-size: cover;
+}
+
+body > section {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group {
+  margin-top: 1rem;
+}
+
+body > section > div {
+  margin-top: -10rem;
+  width: 35rem;
+}
