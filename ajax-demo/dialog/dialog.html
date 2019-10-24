@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>公用对话框</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- 公用对话框开始 -->
+  <!-- 确定对话框开始 -->
+  <div class="modal fade" id="alertDialog" style="z-index: 1990;">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button id="btnAlertOk" class="btn btn-primary">
+            确定
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 确定对话框结束 -->
+
+  <!-- 等待对话框开始 -->
+
+  <div class="modal fade" id="waitDialog" style="z-index: 2000;" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">请等待</h4>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 等待对话框结束 -->
+
+  <!-- 公用对话框结束 -->
+
+
+  <!-- 演示部分，不需要复制 -->
+  <div class="text-center">
+    <button id="btnAlertDemo" class="btn btn-primary">
+      确定对话框演示
+    </button>
+    <button id="btnWaitDemo" class="btn btn-danger">
+      等待对话框演示
+    </button>
+  </div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/dialog.js"></script>
+  <script>
+    $('#btnAlertDemo').click(function () {
+      //调用确定对话框
+      dialog.showAlert('信息', '确认对话框api调用',
+        function () {
+          console.log('对话框回调===>');
+          dialog.showAlert(
+            '信息', '再次调用也很简单！！！');
+        });
+    });
+
+    $('#btnWaitDemo').click(function () {
+      dialog.showWait('数据处理中，请稍候。。。');
+
+      setTimeout(function () {
+        dialog.hideWait(function () {
+          console.log('等待对话框关闭==>');
+        });
+      }, 2000);
+
+    });
+  </script>
+</body>
+
+</html>
