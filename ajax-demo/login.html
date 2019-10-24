@@ -12,6 +12,21 @@
 </head>
 
 <body>
+  <!-- 对话框功能 -->
+  <!-- 等待对话框 -->
+  <div class="modal fade" id="waitDialog" style="z-index: 2000;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">黑暗骑士</h4>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 登陆功能 -->
   <section class="login">
     <div>
       <div class="panel panel-danger">
@@ -32,13 +47,11 @@
               <span class="input-group-addon">
                 <i class="iconfont">&#xe600;</i>
               </span>
-              <input type="password" id="txtPwd" 
-                class="form-control" 
-                placeholder="请输入登陆密码">
+              <input type="password" id="txtPwd" class="form-control" placeholder="请输入登陆密码">
             </div>
           </div>
         </div>
-       
+
         <div class="panel-footer text-center">
           <button class="btn btn-primary" id="btnLogin">
             登陆 <i class="iconfont">&#xe6d0;</i>

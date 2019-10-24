@@ -11,7 +11,11 @@
 
 <body>
   <!-- 确认对话框开始 -->
-  <div class="modal fade" id="alertDialog">
+  <!-- 
+    data-backdrop="static"表示禁用鼠标点击背景关闭对话框
+    data-keyboard="false"表示禁用esc按键关闭对话框
+  -->
+  <div class="modal fade" id="alertDialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
@@ -31,13 +35,32 @@
   </div>
 
   <!-- 确认对话框结束 -->
+
+  <!-- 等待对话框开始 -->
+  <div class="modal fade" id="waitDialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">等待对话框</h4>
+        </div>
+        <div class="modal-body">
+          等待提示信息
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 等待对话框结束 -->
+
+
   <div class="text-center">
-    <input type="text" id="txtAlertTitle"
-      placeholder="请输入对话框的title">
-    <input type="text" id="txtAlertInfo"
-      placeholder="请输入对话框信息">
+    <input type="text" id="txtAlertTitle" placeholder="请输入对话框的title">
+    <input type="text" id="txtAlertInfo" placeholder="请输入对话框信息">
     <button id="btnDialog01" class="btn btn-primary">
       确认对话框
+    </button>
+
+    <button id="btnDialog02" class="btn btn-primary">
+      等待对话框
     </button>
   </div>
   <script src="../js/jquery.min.js"></script>

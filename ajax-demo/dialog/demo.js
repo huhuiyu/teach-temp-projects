@@ -8,12 +8,8 @@
     //jquery支持css选择器
     //html方法等同于innerHTML
     //val方法等同于value
-    $('#alertDialog .modal-title').html(
-      $('#txtAlertTitle').val()
-    );
-    $('#alertDialog .modal-body').html(
-      $('#txtAlertInfo').val()
-    );
+    $('#alertDialog .modal-title').html($('#txtAlertTitle').val());
+    $('#alertDialog .modal-body').html($('#txtAlertInfo').val());
 
     //将id为alertDialog的对话框显示出来
     $('#alertDialog').modal('show');
@@ -24,4 +20,25 @@
     $('#alertDialog').modal('hide');
   });
 
+  $('#btnDialog02').click(function() {
+    $('#waitDialog .modal-title').html($('#txtAlertTitle').val());
+    $('#waitDialog .modal-body').html($('#txtAlertInfo').val());
+
+    $('#waitDialog').modal('show');
+    //等待对话框没有任何按钮可以关闭
+    //所以需要通过其它方式触发关闭事件
+    //比如向服务器请求数据，应答回来后关闭
+    //下面用延时的方式关闭对话框
+    setTimeout(function() {
+      $('#waitDialog').modal('hide');
+    }, 2000);
+  });
+
+  $('#waitDialog').on('shown.bs.modal', function() {
+    console.log('等待对话框已经呈现');
+  });
+
+  $('#waitDialog').on('hidden.bs.modal', function() {
+    console.log('等待对话框已经关闭');
+  });
 })();

@@ -23,6 +23,10 @@
   const tokenKey = 'server.token';
 
   btnLogin.addEventListener('click', function() {
+    $('#waitDialog .modal-body').html('登陆中，请等待...');
+
+    $('#waitDialog').modal('show');
+
     //提交的用户信息格式要和服务器端一致
     let userinfo = {
       'tbUser.username': txtUser.value,
@@ -34,6 +38,7 @@
         headers: { token: localStorage.getItem(tokenKey) }
       })
       .then(function(resp) {
+        $('#waitDialog').modal('hide');
         let data = resp.data;
         console.log(data);
         //保存token
