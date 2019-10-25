@@ -5,18 +5,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>admin/blank.html</title>
+  <title>后台管理首页</title>
   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <div>管理员首页</div>
+  <!-- 对话框开始 -->
+  <section>
+    <!-- 公用对话框开始 -->
+    <!-- 确定对话框开始 -->
+    <div class="modal fade" id="alertDialog" style="z-index: 1990;">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button id="btnAlertOk" class="btn btn-primary">
+              确定
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 确定对话框结束 -->
+    <!-- 等待对话框开始 -->
+    <div class="modal fade" id="waitDialog" style="z-index: 2000;" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">请等待</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 等待对话框结束 -->
+    <!-- 确认对话框开始 -->
+    <div class="modal fade" id="confirmDialog" style="z-index: 1990;">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">确认</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button id="btnConfirmDialogYes" class="btn btn-primary">
+              是
+            </button>
+            <button id="btnConfirmDialogNo" class="btn btn-danger">
+              否
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 确认对话框结束 -->
+    <!-- 公用对话框结束 -->
+  </section>
+  <!-- 页面开始 -->
+  <section class="bg-primary text-right pd5">
+    <span id="spAdmin"></span>
+    <span id="spLogout" class="btn btn-danger">
+      安全退出
+    </span>
+  </section>
 
   <script src="../js/jquery.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/axios.min.js"></script>
   <script src="../js/huhuiyu.js"></script>
   <script src="../js/myapi.js"></script>
+  <script src="../js/dialog.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
