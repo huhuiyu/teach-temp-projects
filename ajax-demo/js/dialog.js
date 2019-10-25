@@ -43,6 +43,41 @@
     waitDialogCloseFunction();
   });
 
+  //确认对话框api=======================================
+  let confirmDialog = $('#confirmDialog');
+  let confirmDialogYesFunction;
+  let confirmDialogNoFunction;
+  let confirmDialogResult;
+  let btnConfirmDialogYes = $('#btnConfirmDialogYes');
+  let btnConfirmDialogNo = $('#btnConfirmDialogNo');
+
+  dialog.showConfirm = function(info, cby, cbn) {
+    //默认是no的结果
+    confirmDialogResult = false;
+    $('#confirmDialog .modal-body').html(info);
+    confirmDialogYesFunction = cby ? cby : function() {};
+    confirmDialogNoFunction = cbn ? cbn : function() {};
+    confirmDialog.modal('show');
+  };
+
+  btnConfirmDialogYes.click(function() {
+    confirmDialogResult = true;
+    confirmDialog.modal('hide');
+  });
+
+  btnConfirmDialogNo.click(function() {
+    confirmDialogResult = false;
+    confirmDialog.modal('hide');
+  });
+
+  confirmDialog.on('hidden.bs.modal', function() {
+    if (confirmDialogResult) {
+      confirmDialogYesFunction();
+    } else {
+      confirmDialogNoFunction();
+    }
+  });
+
   //放置对话框api到全局
   window.dialog = dialog;
 })();
