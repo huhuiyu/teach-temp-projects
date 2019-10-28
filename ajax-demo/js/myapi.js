@@ -17,9 +17,23 @@
   myapi.post = function(url, param, cb) {
     //转换json参数为查询参数，方便调用者直接使用json
     param = huhuiyu.JsonUtil.jsonToQs(param);
-  
+
     axios
       .post(myapi.server + url, param, {
+        headers: {
+          token: localStorage.getItem(myapi.tokenKey)
+        }
+      })
+      .then(function(resp) {
+        let data = resp.data;
+        localStorage.setItem(myapi.tokenKey, data.token);
+        cb(data);
+      });
+  };
+
+  myapi.get = function(url, cb) {
+    axios
+      .get(myapi.server + url, {
         headers: {
           token: localStorage.getItem(myapi.tokenKey)
         }
