@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>演示页</title>
+  <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../lib/css/iconfont.css">
+</head>
+
+<body>
+  <!-- 公用对话框开始 -->
+  <section>
+    <!-- 确定对话框开始 -->
+    <div class="modal fade" id="alertDialog" style="z-index: 1990;">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button id="btnAlertOk" class="btn btn-primary">
+              确定
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 确定对话框结束 -->
+    <!-- 等待对话框开始 -->
+    <div class="modal fade" id="waitDialog" style="z-index: 2000;" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 等待对话框结束 -->
+    <!-- 确认对话框开始 -->
+    <div class="modal fade" id="confirmDialog" style="z-index: 1990;">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button id="btnConfirmDialogYes" class="btn btn-primary">
+              是
+            </button>
+            <button id="btnConfirmDialogNo" class="btn btn-danger">
+              否
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 确认对话框结束 -->
+  </section>
+  <!-- 公用对话框结束 -->
+
+  <div class="h1">
+    iconfont演示：<i class="iconfont">&#xe601;</i>
+  </div>
+
+  <!-- 访问后台数据演示 -->
+  <div>
+    <input type="text" id="txtEcho" placeholder="echo">
+    <button id="btnEcho">echo测试</button>
+    <button id="btnError">错误访问测试</button>
+    <pre id="preEcho"></pre>
+  </div>
+
+  <!-- 对话框演示 -->
+  <div>
+    <button id="btnAlert01">对话框一</button>
+    <button id="btnAlert02">对话框二</button>
+    <button id="btnAlert03">对话框三</button>
+    <button id="btnAlert04">对话框四</button>
+    <button id="btnWait">对话框五</button>
+    <button id="btnConfirm">对话框六</button>
+  </div>
+
+  <script src="../lib/js/axios.min.js"></script>
+  <script src="../lib/js/jquery.min.js"></script>
+  <script src="../lib/js/bootstrap.min.js"></script>
+  <script src="../lib/js/huhuiyu.js"></script>
+  <script src="../lib/js/dialog.js"></script>
+  <script src="../lib/js/myapi.js"></script>
+  <script src="index.js"></script>
+
+</body>
+
+</html>
