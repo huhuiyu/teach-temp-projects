@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>用户登录</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/css/iconfont.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+  <!-- 公用对话框开始 -->
+  <section>
+    <!-- 确定对话框开始 -->
+    <div class="modal fade" id="alertDialog" style="z-index: 1990;">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button id="btnAlertOk" class="btn btn-primary">
+              确定
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 确定对话框结束 -->
+    <!-- 等待对话框开始 -->
+    <div class="modal fade" id="waitDialog" style="z-index: 2000;" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 等待对话框结束 -->
+    <!-- 确认对话框开始 -->
+    <div class="modal fade" id="confirmDialog" style="z-index: 1990;">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button id="btnConfirmDialogYes" class="btn btn-primary">
+              是
+            </button>
+            <button id="btnConfirmDialogNo" class="btn btn-danger">
+              否
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 确认对话框结束 -->
+  </section>
+  <!-- 公用对话框结束 -->
+
+  <!-- 页面逻辑部分 -->
+  <main>
+    <div>
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+          <h3 class="panel-title"><i class="iconfont">&#xe601;</i> 用户登录</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="iconfont">&#xe601;</i>
+              </span>
+              <input type="text" class="form-control" id="txtUsername" placeholder="用户名">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="iconfont">&#xe600;</i>
+              </span>
+              <input type="password" class="form-control" id="txtPassword" placeholder="密码">
+            </div>
+
+          </div>
+        </div>
+        <div class="panel-footer text-right">
+          <span id="btnLogin" class="btn btn-primary">
+            登录<i class="iconfont">&#xe608;</i>
+          </span>
+          <span id="btnReset" class="btn btn-danger">
+            重填<i class="iconfont">&#xec45;</i>
+          </span>
+          <span id="btnReg" class="btn btn-info">
+            注册<i class="iconfont">&#xe6d6;</i>
+          </span>
+        </div>
+      </div>
+
+      <div class="text-center text-danger" id="divInfo">
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- js部分 -->
+  <script src="lib/js/axios.min.js"></script>
+  <script src="lib/js/jquery.min.js"></script>
+  <script src="lib/js/bootstrap.min.js"></script>
+  <script src="lib/js/huhuiyu.js"></script>
+  <script src="lib/js/dialog.js"></script>
+  <script src="lib/js/myapi.js"></script>
+
+  <script src="js/login.js"></script>
+</body>
+
+</html>
