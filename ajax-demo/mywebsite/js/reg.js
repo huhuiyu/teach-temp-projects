@@ -28,4 +28,50 @@
   btnReset.addEventListener('click', resetForm);
 
   resetForm();
+
+  //用户注册
+  btnReg.addEventListener('click', function() {
+    let tbUser = {
+      username: txtUsername.value,
+      password: txtPassword.value,
+      nickname: txtNickname.value
+    };
+    divInfo.innerHTML = '';
+    if (!tbUser.username) {
+      divInfo.innerHTML = '用户名必须填写';
+      txtUsername.focus();
+      return;
+    }
+    if (!tbUser.password) {
+      divInfo.innerHTML = '密码必须填写';
+      txtPassword.focus();
+      return;
+    }
+    if (tbUser.password != txtPassword2.value) {
+      divInfo.innerHTML = '密码不一致！';
+      txtPassword.value = '';
+      txtPassword2.value = '';
+      txtPassword.focus();
+      return;
+    }
+    dialog.showWait('用户注册中，请稍候...');
+    myapi.post(
+      '/user/reg',
+      {
+        tbUser: tbUser
+      },
+      function(data) {
+        dialog.hideWait(function() {
+          if (data.success) {
+            //注册成功的情况
+            resetForm();
+            dialog.showAlert({ info: '注册成功！' });
+          } else {
+            //失败的情况
+            divInfo.innerHTML = data.message;
+          }
+        });
+      }
+    );
+  });
 })();
