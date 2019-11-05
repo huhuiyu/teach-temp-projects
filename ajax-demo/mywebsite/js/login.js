@@ -1,4 +1,4 @@
-(function () {
+(function() {
   console.log('in login.js====>');
 
   let txtUsername = document.getElementById('txtUsername');
@@ -20,7 +20,7 @@
   resetForm();
 
   /* 登录 */
-  btnLogin.addEventListener('click', function () {
+  btnLogin.addEventListener('click', function() {
     let user = {
       username: txtUsername.value,
       password: txtPassword.value
@@ -37,18 +37,20 @@
     }
     divInfo.innerHTML = '';
     dialog.showWait({ info: '登录中，请稍侯。。。' });
-    myapi.post('/user/login', { tbUser: user }
-      , function (data) {
-        dialog.hideWait();
-        if (data.success) {
-          location.href = 'main.html';
-        } else {
-          divInfo.innerHTML = data.message;
-          txtUsername.focus();
-        }
-      });
-
-
+    myapi.post('/user/login', { tbUser: user }, function(data) {
+      dialog.hideWait();
+      if (data.success) {
+        location.href = 'main.html';
+      } else {
+        divInfo.innerHTML = data.message;
+        txtUsername.focus();
+      }
+    });
   });
 
+  //注册跳转
+  btnReg.addEventListener('click', function() {
+    location.href = 'reg.html';
+    //window.open('reg.html');
+  });
 })();
