@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="lib/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/css/iconfont.css">
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -72,7 +73,32 @@
   <!-- 公用对话框结束 -->
 
   <!-- 页面逻辑 -->
+  <section>
+    <div class="bg-primary text-right pd5">
+      <span>
+        <i class="iconfont">&#xe604;</i>
+        <span id="spUser"></span>
+      </span>
+      <span id="btnLogout" class="btn btn-danger">
+        <i class="iconfont">&#xe67b;</i>安全退出
+      </span>
+    </div>
 
+    <div class="main-div">
+      <div class="left">
+        <span id="btnPassword" class="btn btn-danger">
+          修改密码
+        </span>
+        <br>
+        <span id="btnNickname" class="btn btn-danger">
+          修改昵称
+        </span>
+      </div>
+      <div class="right">右</div>
+    </div>
+
+  </section>
+  <div id="divBottom"></div>
   <!-- js部分 -->
   <script src="lib/js/axios.min.js"></script>
   <script src="lib/js/jquery.min.js"></script>
@@ -80,6 +106,8 @@
   <script src="lib/js/huhuiyu.js"></script>
   <script src="lib/js/dialog.js"></script>
   <script src="lib/js/myapi.js"></script>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>

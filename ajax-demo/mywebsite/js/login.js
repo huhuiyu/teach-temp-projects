@@ -53,4 +53,16 @@
     location.href = 'reg.html';
     //window.open('reg.html');
   });
+
+  let eleMain = document.getElementById('eleMain');
+  //keyup是当按键释放后的动作，会传入event对象
+  //来获取按键的信息
+  eleMain.addEventListener('keyup', function(event) {
+    //keyCode是按键对应的代码
+    console.log(event.keyCode);
+    if (event.keyCode == 13) {
+      //回车的效果
+      btnLogin.click();
+    }
+  });
 })();
