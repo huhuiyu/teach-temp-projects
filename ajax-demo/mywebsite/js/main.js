@@ -44,7 +44,18 @@
   let leftDiv = document.querySelector('.main-div .left');
   console.log('left菜单的上端坐标：', leftDiv.offsetTop);
 
-  leftDiv.style.height=(divBottom.offsetTop
-    -leftDiv.offsetTop)+'px';
+  leftDiv.style.height = divBottom.offsetTop - leftDiv.offsetTop + 'px';
+
+  //菜单切换
+  let frmMain=document.getElementById('frmMain');
+  document.getElementById('btnPassword')
+    .addEventListener('click', function() {
+      frmMain.src='modifypwd.html';
+  });
+
+  document.getElementById('btnNickname')
+    .addEventListener('click', function() {
+      frmMain.src='modifynickname.html';
+  });
 
 })();

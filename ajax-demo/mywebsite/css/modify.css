@@ -1,0 +1,7 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+.main .panel {
+  width: 35rem;
+}
