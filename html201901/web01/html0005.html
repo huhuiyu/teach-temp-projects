@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>html0005.html-曼哈顿博士</title>
+  <!-- style是样式表标记，里面可以定义各种样式 -->
+  <style>
+    /* 
+    注释格式不一样！！
+     */
+
+    .mycolor {
+      color: #ffffff;
+      /* background-color是背景颜色 */
+      background-color: #0000ff;
+    }
+
+    .bg {
+      /* 高宽 */
+      width: 320px;
+      height: 240px;
+      /* background-image：背景图片 */
+      background-image: url('img7.jpg');
+      /* 背景图片的大小（缩放） cover是尽量适应容器的高宽 */
+      background-size: cover;
+    }
+
+    /* 
+      css选择器 .样式名称 表示元素的class属性为样式名称的样式效果 
+      例如.mycolor定义的蓝底白字样式效果
+      那么所有class="mycolor"的元素都会套用蓝底白字
+     */
+  </style>
+
+</head>
+
+<body>
+  <!-- 没有任何效果的标记 span 非块级元素-->
+  1-<span>span完全没有任何效果</span>-2
+  <!-- 没有任何效果的块级元素 div -->
+  <div>没有效果，但是块级元素默认宽度是占满容器</div>
+  下面的元素会另起一行
+  <!-- html5带来的块级元素，效果和div一样，区别是有语义 -->
+  <header>header：头部</header>
+  <footer>footer：脚部</footer>
+  <main>main：网站的主体内容</main>
+  <nav>nav：导航栏</nav>
+  <section>section：区块，和div完全等义</section>
+  <!-- 
+    css样式
+    第一种使用样式的方法，元素的style属性，优先级最高，不常用
+    样式是由：样式名称:样式值;组成
+    例如颜色：
+    color:颜色值;
+    颜色值；1:直接颜色名称
+    2:三个16进制数(0-f)组成的，分别是电脑三原色rgb，红绿蓝
+    3:六个16进制数，每两个值是一个三原色，最常用的演示表达方式！！！
+    4:rgb是0-255的三原色
+   -->
+  <span style="color: red;">1</span>
+  <span style="color: #ff0;">2</span>
+  <span style="color: #0000ff;">3</span>
+  <span style="color: rgb(0, 255, 0);">4</span>
+  <span style="color: pink;">5</span>
+  <span style="color: aqua;">6</span>
+  <!-- 第二种定义样式的方式 -->
+  <section class="mycolor">
+    蓝底白字
+  </section>
+
+  <section class="bg">
+    我是有背景图片的！
+  </section>
+
+</body>
+
+</html>
